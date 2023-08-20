@@ -38,7 +38,7 @@ export class App extends Component {
   render() {
     return (
       <AppStyled>
-        <Searchbar onChange={this.changeValues} />
+        <Searchbar onSubmit={this.changeValues} />
         <main>
           <ImageGallery imageState={this.componentDidUpdate} />
           <Button />

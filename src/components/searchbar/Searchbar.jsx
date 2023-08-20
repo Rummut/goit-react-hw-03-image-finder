@@ -6,15 +6,15 @@ import {
   SearchbarStyled,
 } from './Searchbar.styled';
 
-export const Searchbar = ({ onChange }) => {
+export const Searchbar = ({ onSubmit }) => {
   return (
     <SearchbarStyled>
       <SearchBarForm
         onSubmit={event => {
           event.preventDefault();
-          {
-            onChange(event.target.elements.values.value);
-          }
+          
+            onSubmit(event.target.elements.values.value);
+          
           event.target.reset();
         }}
       >

@@ -24,7 +24,7 @@ export const Searchbar = ({ onChange }) => {
 
         <InputStyled
           type="text"
-          name = "values"
+          name="values"
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"

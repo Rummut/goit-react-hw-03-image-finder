@@ -14,7 +14,6 @@ export const Searchbar = ({ onSubmit }) => {
           event.preventDefault();
           
             onSubmit(event.target.elements.values.value);
-          
           event.target.reset();
         }}
       >

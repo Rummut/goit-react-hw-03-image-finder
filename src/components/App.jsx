@@ -15,11 +15,12 @@ export class App extends Component {
     total: 0,
   };
   changeValues = newValues => {
-    this.setState({
+   if (newValues !== "") {this.setState({
       values: newValues,
       images: [],
       page: 1,
-    });
+    });}
+    
   };
   async componentDidUpdate(prevProps, prevState) {
     if (

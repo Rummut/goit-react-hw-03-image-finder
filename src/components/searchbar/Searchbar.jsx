@@ -12,8 +12,8 @@ export const Searchbar = ({ onSubmit }) => {
       <SearchBarForm
         onSubmit={event => {
           event.preventDefault();
-          
-            onSubmit(event.target.elements.values.value);
+
+          onSubmit(event.target.elements.values.value);
           event.target.reset();
         }}
       >

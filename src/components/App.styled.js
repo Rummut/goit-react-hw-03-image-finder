@@ -8,6 +8,7 @@ export const AppStyled = styled.div`
 `;
 
 export const MainStyled = styled.main`
-display: flex;
-    flex-direction: column;
-    align-items: center;`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

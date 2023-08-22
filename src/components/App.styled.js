@@ -6,3 +6,8 @@ export const AppStyled = styled.div`
   grid-gap: 16px;
   padding-bottom: 24px;
 `;
+
+export const MainStyled = styled.main`
+display: flex;
+    flex-direction: column;
+    align-items: center;`

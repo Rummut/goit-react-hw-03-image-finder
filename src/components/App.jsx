@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Searchbar } from './searchbar/Searchbar';
 import { ImageGallery } from './image-gallery/ImageGallery';
 import { Button } from './button/Button';
-import { AppStyled } from './App.styled';
+import { AppStyled, MainStyled } from './App.styled';
 import { FetchImages } from './api-request/Api-requst';
 import { RotatingLines } from 'react-loader-spinner';
 
@@ -49,11 +49,11 @@ export class App extends Component {
   };
 
   render() {
-    const { values, page, images, isLoading, total } = this.state;
+    const {images, isLoading, total } = this.state;
     return (
       <AppStyled>
         <Searchbar onSubmit={this.changeValues} />
-        <main>
+        <MainStyled>
           <ImageGallery imageState={images} />
           {isLoading ? (
             <RotatingLines
@@ -64,9 +64,9 @@ export class App extends Component {
               visible={true}
             />
           ) : (
-            images.length > 0 & images.length < total && <Button onClick={this.handleLoadMore} />
+           images.length < total && <Button onClick={this.handleLoadMore} />
           )}
-        </main>
+        </MainStyled>
       </AppStyled>
     );
   }

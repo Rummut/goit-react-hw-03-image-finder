@@ -4,8 +4,7 @@ import { ImageGallery } from './image-gallery/ImageGallery';
 import { Button } from './button/Button';
 import { AppStyled, MainStyled } from './App.styled';
 import { FetchImages } from './api-request/Api-requst';
-import { RotatingLines } from 'react-loader-spinner';
-
+import { ThreeDots } from 'react-loader-spinner';
 
 export class App extends Component {
   state = {
@@ -49,22 +48,25 @@ export class App extends Component {
   };
 
   render() {
-    const {images, isLoading, total } = this.state;
+    const { images, isLoading, total } = this.state;
     return (
       <AppStyled>
         <Searchbar onSubmit={this.changeValues} />
         <MainStyled>
           <ImageGallery imageState={images} />
           {isLoading ? (
-            <RotatingLines
-              strokeColor="blue"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="96"
+            <ThreeDots
+              height="80"
+              width="80"
+              radius="9"
+              color="#3f51b5"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              wrapperClassName=""
               visible={true}
             />
           ) : (
-           images.length < total && <Button onClick={this.handleLoadMore} />
+            images.length < total && <Button onClick={this.handleLoadMore} />
           )}
         </MainStyled>
       </AppStyled>

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Modal from 'react-modal';
 import css from './modal.module.css';
+import { ImageGalleryItemStyled, ImageStyled } from './ImageGalleryItem.styled';
 // const customStyles = {
 //   content: {
 //     top: '50%',
@@ -28,9 +29,9 @@ export class ImageGalleryItem extends Component {
     const { isModalOpen } = this.state;
     return (
      <>
-        <li onClick={this.openModal}>
-          <img src={imageState.webformatURL } alt={imageState.tags} />
-        </li>
+        <ImageGalleryItemStyled onClick={this.openModal}>
+          <ImageStyled src={imageState.webformatURL } alt={imageState.tags} />
+        </ImageGalleryItemStyled>
         <Modal
             isOpen={isModalOpen}
             onRequestClose={this.closeModal}
